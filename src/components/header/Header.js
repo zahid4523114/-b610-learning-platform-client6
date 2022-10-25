@@ -36,6 +36,12 @@ const Header = () => {
         </Link>
         {user?.photoURL ? (
           <>
+            <Link
+              onClick={userSignOut}
+              className="text-decoration-none mb-lg-0 mb-md-0 btn fs-3 link-primary mb-2"
+            >
+              Log Out
+            </Link>
             <img
               style={{ height: "50px", borderRadius: "50%" }}
               title={user?.displayName}
@@ -43,22 +49,16 @@ const Header = () => {
               alt="Logo"
               class=""
             />
-            <Link
-              onClick={userSignOut}
-              className="text-decoration-none mb-lg-0 mb-md-0 btn fs-3 link-primary mb-2"
-            >
-              Log Out
-            </Link>
           </>
         ) : (
           <>
-            <span className="fs-2">{<FaUser></FaUser>}</span>
             <Link
               className="text-decoration-none mb-lg-0 mb-md-0 btn fs-3 link-primary mb-2"
               to="/login"
             >
               Log In
             </Link>
+            <span className="fs-2">{<FaUser></FaUser>}</span>
           </>
         )}
         <button className="btn btn-dark rounded-pill">Theme</button>

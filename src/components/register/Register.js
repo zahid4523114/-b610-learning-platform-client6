@@ -32,7 +32,13 @@ const Register = () => {
   //update user profile passing pera meter:
   const handleUserProfile = (displayName, photoURL) => {
     const userData = { displayName, photoURL };
-    userProfileUpdate(userData);
+    userProfileUpdate(userData)
+      .then(() => {
+        console.log("profile updated");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <form onSubmit={handleRegister}>

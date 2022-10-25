@@ -6,6 +6,7 @@ import Home from "../home/Home";
 import Main from "../layout/Main";
 import Login from "../login/Login";
 import Register from "../register/Register";
+import { HiExclamation } from "react-icons/hi";
 
 export const router = createBrowserRouter([
   {
@@ -37,5 +38,17 @@ export const router = createBrowserRouter([
         element: <Blog></Blog>,
       },
     ],
+  },
+  {
+    path: "*",
+    element: (
+      <div className="text-center mt-5">
+        <h1>404!</h1>
+        <h2>
+          Couldn't found the page...
+          <HiExclamation className="text-danger"></HiExclamation>
+        </h2>
+      </div>
+    ),
   },
 ]);

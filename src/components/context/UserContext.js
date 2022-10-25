@@ -26,10 +26,12 @@ const UserContext = ({ children }) => {
   const registerUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
+
   //When a user signs in to your app, pass the user's email address and password to signInWithEmailAndPassword:
   const loggedInUser = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
+
   //The recommended way to get the current user is by setting an observer on the Auth object:
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -37,18 +39,22 @@ const UserContext = ({ children }) => {
     });
     return () => unsubscribe();
   }, []);
+
   //To sign in with a pop-up window, call signInWithPopup with google:
   const signInWithGoogle = () => {
     return signInWithPopup(auth, googleProvider);
   };
+
   //To sign in with a pop-up window, call signInWithPopup with github:
   const signInWithGitHub = () => {
     return signInWithPopup(auth, gitHubProvider);
   };
+
   //You can update a user's basic profile information—the user's display name and profile photo URL—with the updateProfile method.
-  const userProfileUpdate = () => {
-    updateProfile(auth.currentUser);
+  const userProfileUpdate = (userData) => {
+    return updateProfile(auth.currentUser, userData);
   };
+
   //to sign out a user, call signOut:
   const signOutUser = () => {
     return signOut(auth);
