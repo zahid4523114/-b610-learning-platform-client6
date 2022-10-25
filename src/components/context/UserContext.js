@@ -10,7 +10,7 @@ const UserContext = ({ children }) => {
   const [user, setUser] = useState({});
 
   const authInfo = { user };
-  //Create a new account by passing the new user's email address and password to createUserWithEmailAndPassword:
+
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );
