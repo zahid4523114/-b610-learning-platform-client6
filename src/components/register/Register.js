@@ -30,10 +30,10 @@ const Register = () => {
       });
   };
   //update user profile passing pera meter:
-  //   const handleUserProfile = (displayName, photoURL) => {
-  //     const userData = { displayName, photoURL };
-  //     userProfileUpdate(userData);
-  //   };
+  const handleUserProfile = (displayName, photoURL) => {
+    const userData = { displayName, photoURL };
+    userProfileUpdate(userData);
+  };
   return (
     <form onSubmit={handleRegister}>
       <div className="w-75 mx-auto my-5 shadow-lg p-4 rounded-2">
