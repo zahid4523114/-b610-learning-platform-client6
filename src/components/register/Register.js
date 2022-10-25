@@ -1,8 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaGoogle, FaGithub } from "react-icons/fa";
+import { useState } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../context/UserContext";
 
 const Register = () => {
+  const { registerUser, userProfileUpdate } = useContext(AuthContext);
+  const [error, setError] = useState();
   const handleRegister = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -11,6 +16,23 @@ const Register = () => {
     const name = form.name.value;
     const photo = form.photo.value;
     console.log(email, password, name, photo);
+    //
+    registerUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        form.reset();
+        handleUserProfile(name, photo);
+        console.log(user);
+      })
+      .catch((error) => {
+        const message = error.message;
+        setError(message);
+      });
+  };
+  //update user profile passing pera meter:
+  const handleUserProfile = (displayName, photoURL) => {
+    const userData = { displayName, photoURL };
+    userProfileUpdate(userData);
   };
   return (
     <form onSubmit={handleRegister}>
@@ -65,6 +87,7 @@ const Register = () => {
             id="exampleInputPassword1"
           />
         </div>
+        <p className="text-danger">{error}</p>
         <p>
           <Link to="/login">Already have an account?</Link>
         </p>

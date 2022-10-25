@@ -1,14 +1,40 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaGoogle, FaGithub } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../context/UserContext";
+import { useState } from "react";
 
 const Login = () => {
+  const { loggedInUser, signInWithGoogle, signInWithGitHub } =
+    useContext(AuthContext);
+  const [error, setError] = useState();
   const handleLogIn = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    // console.log(email, password);
+    //passing user email and password as pera meter:
+    loggedInUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        form.reset();
+        console.log(user);
+      })
+      .catch((error) => {
+        const message = error.message;
+        setError(message);
+        console.log(message);
+      });
+  };
+  //sign with google popup:
+  const googleSignIn = () => {
+    signInWithGoogle();
+  };
+  //sign with github popup:
+  const gitHubSignIn = () => {
+    signInWithGitHub();
   };
   return (
     <form onSubmit={handleLogIn}>
@@ -37,6 +63,7 @@ const Login = () => {
             id="exampleInputPassword1"
           />
         </div>
+        <p className="text-danger">{error}</p>
         <p>
           <Link to="/register">Create a new account?</Link>
         </p>
@@ -44,10 +71,10 @@ const Login = () => {
           LOG IN
         </button>
         <div className="mt-3 text-center">
-          <Link>
+          <Link onClick={googleSignIn}>
             <FaGoogle className="fs-3 me-3"></FaGoogle>
           </Link>
-          <Link>
+          <Link onClick={gitHubSignIn}>
             <FaGithub className="fs-3"></FaGithub>
           </Link>
         </div>
