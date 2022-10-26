@@ -3,7 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const CourseDetails = () => {
   const courseDetail = useLoaderData();
-  const { courseHeader, courseThumb, courseDes } = courseDetail;
+  const { id, courseHeader, courseThumb, courseDes } = courseDetail;
   return (
     <div class="card m-3" style={{ maxwidth: "540px" }}>
       <div class="row g-0">
@@ -16,7 +16,7 @@ const CourseDetails = () => {
             <p class="card-text">{courseDes}</p>
             <button className="btn btn-danger">Download Pdf</button>
             <Link
-              to="/checkoutPage"
+              to={`/course/detail/${id}`}
               className="btn btn-dark ms-lg-3 ms-md-3 ms-0 mt-lg-0 mt-md-0 mt-3"
             >
               Get Premium Access

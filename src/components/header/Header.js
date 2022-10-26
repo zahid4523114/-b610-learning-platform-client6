@@ -47,7 +47,6 @@ const Header = () => {
               title={user?.displayName}
               src={user?.photoURL}
               alt="Logo"
-              class=""
             />
           </>
         ) : (
