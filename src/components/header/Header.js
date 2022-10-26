@@ -1,4 +1,5 @@
 import React from "react";
+import "./header.css";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../header-logo.png";
@@ -60,7 +61,14 @@ const Header = () => {
             <span className="fs-2">{<FaUser></FaUser>}</span>
           </>
         )}
-        <button className="btn btn-dark rounded-pill">Theme</button>
+        {
+          <>
+            <label class="switch mt-lg-0 mt-md-0 mt-2">
+              <input type="checkbox" />
+              <span class="slider round"></span>
+            </label>
+          </>
+        }
       </div>
     </nav>
   );
