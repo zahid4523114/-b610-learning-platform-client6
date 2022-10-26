@@ -7,6 +7,7 @@ import Main from "../layout/Main";
 import Login from "../login/Login";
 import Register from "../register/Register";
 import { HiExclamation } from "react-icons/hi";
+import CourseDetails from "../courseDetails/CourseDetails";
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +30,12 @@ export const router = createBrowserRouter([
         path: "/courses",
         loader: () => fetch("http://localhost:3500/courses"),
         element: <Courses></Courses>,
+      },
+      {
+        path: "/course/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:3500/course/${params.id}`),
+        element: <CourseDetails></CourseDetails>,
       },
       {
         path: "/faq",
