@@ -1,0 +1,11 @@
+.course-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .course-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+  }
+}
