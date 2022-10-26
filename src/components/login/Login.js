@@ -1,11 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../context/UserContext";
 import { useState } from "react";
 
 const Login = () => {
+  let navigate = useNavigate();
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   const { loggedInUser, signInWithGoogle, signInWithGitHub } =
     useContext(AuthContext);
   const [error, setError] = useState();
@@ -21,6 +24,7 @@ const Login = () => {
         const user = result.user;
         form.reset();
         console.log(user);
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         const message = error.message;

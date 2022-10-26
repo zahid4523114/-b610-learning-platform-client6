@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Course from "../course/Course";
 import "./courses.css";
 
@@ -17,12 +17,13 @@ const Courses = () => {
     <div className="row container-fluid">
       <div className="col-lg-3 col-md-12 col-12 ms-lg-0 ms-md-0 ms-2  d-flex  flex-column">
         {catagories.map((category) => (
-          <button
+          <Link
+            to={`/course/${category.id}`}
             key={category.id}
             className="btn btn-success my-lg-4 my-md-3 my-2"
           >
             {category.categoryName}
-          </button>
+          </Link>
         ))}
       </div>
       <div className="col-lg-9 col-md-12 col-12 course-container">

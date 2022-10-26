@@ -34,7 +34,7 @@ const Header = () => {
         >
           Blog
         </Link>
-        {user?.photoURL ? (
+        {user?.photoURL || user?.uid ? (
           <>
             <Link
               onClick={userSignOut}
