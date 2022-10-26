@@ -9,7 +9,7 @@ const Courses = () => {
   const allCourses = useLoaderData();
   const [catagories, setCatagories] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3500/category")
+    fetch("https://b610-node-server.vercel.app/category")
       .then((res) => res.json())
       .then((data) => setCatagories(data));
   }, []);

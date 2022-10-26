@@ -34,19 +34,21 @@ export const router = createBrowserRouter([
       },
       {
         path: "/courses",
-        loader: () => fetch("http://localhost:3500/courses"),
+        loader: () => fetch("https://b610-node-server.vercel.app/courses"),
         element: <Courses></Courses>,
       },
       {
         path: "/course/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3500/course/${params.id}`),
+          fetch(`https://b610-node-server.vercel.app/course/${params.id}`),
         element: <CourseDetails></CourseDetails>,
       },
       {
         path: "/course/detail/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3500/course/detail/${params.id}`),
+          fetch(
+            `https://b610-node-server.vercel.app/course/detail/${params.id}`
+          ),
         element: (
           <PrivateRoute>
             <CheckoutPage></CheckoutPage>

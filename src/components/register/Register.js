@@ -7,7 +7,12 @@ import { useContext } from "react";
 import { AuthContext } from "../context/UserContext";
 
 const Register = () => {
-  const { registerUser, userProfileUpdate } = useContext(AuthContext);
+  const {
+    registerUser,
+    userProfileUpdate,
+    signInWithGoogle,
+    signInWithGitHub,
+  } = useContext(AuthContext);
   const [error, setError] = useState();
   const handleRegister = (event) => {
     event.preventDefault();
@@ -41,6 +46,14 @@ const Register = () => {
         console.log(error);
       });
   };
+  //sign with google popup:
+  const googleSignIn = () => {
+    signInWithGoogle();
+  };
+  //sign with github popup:
+  const gitHubSignIn = () => {
+    signInWithGitHub();
+  };
   return (
     <form onSubmit={handleRegister}>
       <div className="w-75 mx-auto my-5 shadow-lg p-4 rounded-2">
@@ -51,6 +64,7 @@ const Register = () => {
           <input
             type="text"
             class="form-control"
+            placeholder="User name"
             name="name"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
@@ -64,6 +78,7 @@ const Register = () => {
           <input
             type="text"
             class="form-control"
+            placeholder="Url"
             name="photo"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
@@ -75,8 +90,10 @@ const Register = () => {
             Email
           </label>
           <input
+            required
             type="email"
             class="form-control"
+            placeholder="Enter your email"
             name="email"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
@@ -88,8 +105,10 @@ const Register = () => {
             Password
           </label>
           <input
+            required
             type="password"
             class="form-control"
+            placeholder="Enter your password"
             name="password"
             id="exampleInputPassword1"
           />
@@ -101,12 +120,18 @@ const Register = () => {
         <button type="submit" class="btn btn-primary">
           REGISTER
         </button>
-        <div className="mt-3 text-center">
-          <Link>
-            <FcGoogle className="fs-3 me-3"></FcGoogle>
+        <div className="mt-3 d-flex justify-content-center flex-lg-row flex-column text-center">
+          <Link
+            className="shadow-lg my-lg-0 my-3 rounded-5 p-2 text-decoration-none me-2"
+            onClick={googleSignIn}
+          >
+            <FcGoogle className="fs-3"></FcGoogle>Sign in Google
           </Link>
-          <Link>
-            <FaGithub className="fs-3 text-dark"></FaGithub>
+          <Link
+            className="text-decoration-none p-2 shadow-lg rounded-5"
+            onClick={gitHubSignIn}
+          >
+            <FaGithub className="fs-3 text-dark "></FaGithub>Sign in Github
           </Link>
         </div>
       </div>

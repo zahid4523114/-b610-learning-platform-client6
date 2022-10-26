@@ -12,69 +12,96 @@ const Header = () => {
     signOutUser();
   };
   return (
-    <nav class="navbar bg-light">
-      <div class="container-fluid d-flex flex-lg-row flex-md-column flex-column">
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
         <Link class="navbar-brand">
           <img src={logo} alt="Logo" class="d-inline-block align-text-top" />
         </Link>
-        <Link
-          className="text-decoration-none mb-lg-0 mb-md-0 btn fs-3 link-primary mb-2"
-          to="/home"
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
-          Home
-        </Link>
-        <Link
-          className="text-decoration-none mb-lg-0 mb-md-0 btn fs-3 link-primary mb-2"
-          to="/courses"
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse d-lg-flex justify-content-lg-end"
+          id="navbarNav"
         >
-          Courses
-        </Link>
-        <Link
-          className="text-decoration-none mb-lg-0 mb-md-0 btn fs-3 link-primary mb-2"
-          to="/faq"
-        >
-          FAQ
-        </Link>
-        <Link
-          className="text-decoration-none mb-lg-0 mb-md-0 btn fs-3 link-primary mb-2"
-          to="/blog"
-        >
-          Blog
-        </Link>
-        {user?.photoURL || user?.uid ? (
-          <>
-            <Link
-              onClick={userSignOut}
-              className="text-decoration-none mb-lg-0 mb-md-0 btn fs-3 link-primary mb-2"
-            >
-              Log Out
-            </Link>
-            <img
-              style={{ height: "50px", borderRadius: "50%" }}
-              title={user?.displayName}
-              src={user?.photoURL}
-              alt="Logo"
-            />
-          </>
-        ) : (
-          <>
-            <Link
-              className="text-decoration-none mb-lg-0 mb-md-0 btn fs-3 link-primary mb-2"
-              to="/login"
-            >
-              Log In
-            </Link>
-            <span className="fs-2">{<FaUser></FaUser>}</span>
-          </>
-        )}
-        {
-          <>
-            <label class="switch mt-lg-0 mt-md-0 mt-2">
-              <input type="checkbox" />
-              <span class="slider round"></span>
-            </label>
-          </>
-        }
+          <ul class="navbar-nav d-lg-flex align-items-lg-center">
+            <li class="nav-item me-lg-5">
+              <Link
+                className="text-decoration-none mb-lg-0 mb-md-0 btn fs-3 link-primary mb-2"
+                to="/home"
+              >
+                Home
+              </Link>
+            </li>
+            <li class="nav-item me-lg-5">
+              <Link
+                className="text-decoration-none mb-lg-0 mb-md-0 btn fs-3 link-primary mb-2"
+                to="/courses"
+              >
+                Courses
+              </Link>
+            </li>
+            <li class="nav-item me-lg-5">
+              <Link
+                className="text-decoration-none mb-lg-0 mb-md-0 btn fs-3 link-primary mb-2"
+                to="/faq"
+              >
+                FAQ
+              </Link>
+            </li>
+            <li class="nav-item me-lg-5">
+              <Link
+                className="text-decoration-none mb-lg-0 mb-md-0 btn fs-3 link-primary mb-2"
+                to="/blog"
+              >
+                Blog
+              </Link>
+            </li>
+            <li class="nav-item me-lg-5">
+              {user?.photoURL || user?.uid ? (
+                <>
+                  <Link
+                    onClick={userSignOut}
+                    className="text-decoration-none mb-lg-0 mb-md-0 btn fs-3 link-primary mb-2"
+                  >
+                    Log Out
+                  </Link>
+                  <img
+                    style={{ height: "50px", borderRadius: "50%" }}
+                    title={user?.displayName}
+                    src={user?.photoURL}
+                    alt="Logo"
+                  />
+                </>
+              ) : (
+                <>
+                  <Link
+                    className="text-decoration-none mb-lg-0 mb-md-0 btn fs-3 link-primary mb-2"
+                    to="/login"
+                  >
+                    Log In
+                  </Link>
+                  <span className="fs-2">{<FaUser></FaUser>}</span>
+                </>
+              )}
+            </li>
+            <li className="nav-item me-lg-5 d-flex align-items-center">
+              <label class="switch mt-lg-0 mt-md-0 mt-2">
+                <input type="checkbox" />
+                <span class="slider round"></span>
+              </label>
+              <span className="ms-2 fw-bold">Theme</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   );

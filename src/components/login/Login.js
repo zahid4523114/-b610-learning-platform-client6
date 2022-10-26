@@ -49,8 +49,10 @@ const Login = () => {
             Email
           </label>
           <input
+            required
             type="email"
             class="form-control"
+            placeholder="Enter your email"
             name="email"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
@@ -62,8 +64,10 @@ const Login = () => {
             Password
           </label>
           <input
+            required
             type="password"
             class="form-control"
+            placeholder="Enter your password"
             name="password"
             id="exampleInputPassword1"
           />
@@ -75,12 +79,18 @@ const Login = () => {
         <button type="submit" class="btn btn-primary">
           LOG IN
         </button>
-        <div className="mt-3 text-center">
-          <Link onClick={googleSignIn}>
-            <FcGoogle className="fs-3 me-3"></FcGoogle>
+        <div className="mt-3 d-flex justify-content-center flex-lg-row flex-column text-center">
+          <Link
+            className="shadow-lg my-lg-0 my-3 rounded-5 p-2 text-decoration-none me-2"
+            onClick={googleSignIn}
+          >
+            <FcGoogle className="fs-3"></FcGoogle>Sign in Google
           </Link>
-          <Link onClick={gitHubSignIn}>
-            <FaGithub className="fs-3 text-dark"></FaGithub>
+          <Link
+            className="text-decoration-none p-2 shadow-lg rounded-5"
+            onClick={gitHubSignIn}
+          >
+            <FaGithub className="fs-3 text-dark "></FaGithub>Sign in Github
           </Link>
         </div>
       </div>
