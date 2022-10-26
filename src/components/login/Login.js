@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FaGoogle, FaGithub } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 import { useContext } from "react";
 import { AuthContext } from "../context/UserContext";
 import { useState } from "react";
@@ -76,10 +77,10 @@ const Login = () => {
         </button>
         <div className="mt-3 text-center">
           <Link onClick={googleSignIn}>
-            <FaGoogle className="fs-3 me-3"></FaGoogle>
+            <FcGoogle className="fs-3 me-3"></FcGoogle>
           </Link>
           <Link onClick={gitHubSignIn}>
-            <FaGithub className="fs-3"></FaGithub>
+            <FaGithub className="fs-3 text-dark"></FaGithub>
           </Link>
         </div>
       </div>

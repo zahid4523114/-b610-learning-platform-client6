@@ -6,7 +6,7 @@ const Faq = () => {
       <div class="accordion-item">
         <h2 class="accordion-header" id="flush-headingOne">
           <button
-            class="accordion-button collapsed fs-4"
+            class="accordion-button fw-bold collapsed"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#flush-collapseOne"
@@ -40,7 +40,7 @@ const Faq = () => {
       <div class="accordion-item">
         <h2 class="accordion-header" id="flush-headingTwo">
           <button
-            class="accordion-button collapsed fs-4"
+            class="accordion-button fw-bold collapsed"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#flush-collapseTwo"
@@ -70,7 +70,7 @@ const Faq = () => {
       <div class="accordion-item">
         <h2 class="accordion-header" id="flush-headingThree">
           <button
-            class="accordion-button collapsed fs-4"
+            class="accordion-button fw-bold collapsed"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#flush-collapseThree"

@@ -19,6 +19,12 @@ const Header = () => {
         </Link>
         <Link
           className="text-decoration-none mb-lg-0 mb-md-0 btn fs-3 link-primary mb-2"
+          to="/home"
+        >
+          Home
+        </Link>
+        <Link
+          className="text-decoration-none mb-lg-0 mb-md-0 btn fs-3 link-primary mb-2"
           to="/courses"
         >
           Courses

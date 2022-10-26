@@ -20,7 +20,8 @@ const Courses = () => {
           <Link
             to={`/course/${category.id}`}
             key={category.id}
-            className="btn btn-success my-lg-4 my-md-3 my-2"
+            style={{ backgroundColor: "lightcoral" }}
+            className="btn text-light my-lg-4 my-md-3 my-2"
           >
             {category.categoryName}
           </Link>
