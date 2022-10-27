@@ -24,8 +24,8 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         form.reset();
-        console.log(user);
         navigate(from, { replace: true });
+        console.log(user);
       })
       .catch((error) => {
         const message = error.message;

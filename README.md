@@ -1,8 +1,8 @@
 # Getting Started with b610-learning-platform
 
-1.Website Name:Edu Zone.
+1.Website Name:EduZone.
 
-2.Live link:
+2.Live link:https://b610-learning-platform-2b064.web.app
 
 3.Website's different features and functionality:{
 .First of all i have been added a header at the top of website to find the different data in different location.
@@ -16,4 +16,5 @@
 4.List of technologies:{
 .react-bootstrap
 .react-icon
+.react-to-pdf
 }
