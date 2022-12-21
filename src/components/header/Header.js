@@ -35,7 +35,7 @@ const Header = () => {
           <ul class="navbar-nav d-lg-flex align-items-lg-center">
             <li class="nav-item me-lg-5">
               <Link
-                className="text-decoration-none mb-lg-0 mb-md-0 btn fs-3 link-primary mb-2"
+                className="text-decoration-none mb-lg-0 mb-md-0 btn fs-4 link-primary mb-2"
                 to="/home"
               >
                 Home
@@ -43,7 +43,7 @@ const Header = () => {
             </li>
             <li class="nav-item me-lg-5">
               <Link
-                className="text-decoration-none mb-lg-0 mb-md-0 btn fs-3 link-primary mb-2"
+                className="text-decoration-none mb-lg-0 mb-md-0 btn fs-4 link-primary mb-2"
                 to="/courses"
               >
                 Courses
@@ -51,7 +51,7 @@ const Header = () => {
             </li>
             <li class="nav-item me-lg-5">
               <Link
-                className="text-decoration-none mb-lg-0 mb-md-0 btn fs-3 link-primary mb-2"
+                className="text-decoration-none mb-lg-0 mb-md-0 btn fs-4 link-primary mb-2"
                 to="/faq"
               >
                 FAQ
@@ -59,7 +59,7 @@ const Header = () => {
             </li>
             <li class="nav-item me-lg-5">
               <Link
-                className="text-decoration-none mb-lg-0 mb-md-0 btn fs-3 link-primary mb-2"
+                className="text-decoration-none mb-lg-0 mb-md-0 btn fs-4 link-primary mb-2"
                 to="/blog"
               >
                 Blog
@@ -70,7 +70,7 @@ const Header = () => {
                 <>
                   <Link
                     onClick={userSignOut}
-                    className="text-decoration-none mb-lg-0 mb-md-0 btn fs-3 link-primary mb-2"
+                    className="text-decoration-none mb-lg-0 mb-md-0 btn fs-4 link-primary mb-2"
                   >
                     Log Out
                   </Link>
@@ -84,7 +84,7 @@ const Header = () => {
               ) : (
                 <>
                   <Link
-                    className="text-decoration-none mb-lg-0 mb-md-0 btn fs-3 link-primary mb-2"
+                    className="text-decoration-none mb-lg-0 mb-md-0 btn fs-4 link-primary mb-2"
                     to="/login"
                   >
                     Log In
@@ -92,13 +92,6 @@ const Header = () => {
                   <span className="fs-2">{<FaUser></FaUser>}</span>
                 </>
               )}
-            </li>
-            <li className="nav-item me-lg-5 d-flex align-items-center">
-              <label class="switch mt-lg-0 mt-md-0 mt-2">
-                <input type="checkbox" />
-                <span class="slider round"></span>
-              </label>
-              <span className="ms-2 fw-bold">Theme</span>
             </li>
           </ul>
         </div>
